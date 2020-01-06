@@ -12,18 +12,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import java.io.InputStream;
 import java.util.Date;
 
 @Service
 public class ShopServiceImpl implements ShopService {
     @Autowired
     private ShopDao shopDao;
-
-    @Override
-    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
-        return null;
-    }
 
     @Override
     @Transactional
@@ -67,8 +61,4 @@ public class ShopServiceImpl implements ShopService {
         shop.setShopImg(shopImagAddr);
     }
 
-    @Override
-    public ShopExecution updateShop(Shop shop) {
-        return null;
-    }
 }

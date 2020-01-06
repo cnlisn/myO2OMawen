@@ -17,7 +17,6 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,7 +57,7 @@ public class ShopController {
             // TODO: 2020/1/5
             owner.setUserId(11L);
             shop.setOwnerId(owner.getUserId());
-            ShopExecution shopExecution = shopService.addShop(shop, shopImg,shopImg.getName());
+            ShopExecution shopExecution = shopService.addShop(shop, shopImg);
             if (shopExecution.getState()== ShopStateEnum.CHECK.getState()){
                 modelMap.put("success", false);
             }else {
