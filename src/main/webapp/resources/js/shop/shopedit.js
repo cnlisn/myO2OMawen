@@ -1,6 +1,5 @@
 $(function () {
     var registerShopUrl = '/superadmin/registershop';
-    var registerUrl = '/superadmin/register';
     var shopInfoUrl = '/shop/getShopInitInfo';
 
     getInfo();
@@ -53,28 +52,6 @@ $(function () {
         var formData1 = new FormData();
         formData1.append('shopStr', JSON.stringify(shop));
 
-        $.ajax({
-            url: registerUrl,
-            type: 'POST',
-            // contentType: "application/x-www-form-urlencoded; charset=utf-8",
-            data: formData1,
-            contentType: false,
-            processData: false,
-            cache: false,
-            success: function (data) {
-                if (data.success) {
-                    $.toast('提交成功！');
-                    // if (isEdit){
-                    //     $('#captcha_img').click();
-                    // } else{
-                    //     window.location.href="/shop/shoplist";
-                    // }
-                } else {
-                    $.toast('提交失败！');
-                    // $('#captcha_img').click();
-                }
-            }
-        });
 
         $.ajax({
             url: registerShopUrl,
