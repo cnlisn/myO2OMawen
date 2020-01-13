@@ -26,7 +26,14 @@ public class ShopController {
     @Autowired
     private ShopService shopService;
 
-    @RequestMapping(value = "/registershop", method = RequestMethod.GET)
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public Map<String, Object> register(HttpServletRequest request) {
+        HashMap<String, Object> modelMap = new HashMap<>();
+        String shopStr = HttpServletRequestUtil.getString(request, "shopStr");
+        modelMap.put("shopStr", shopStr);
+        return modelMap;
+    }
+    @RequestMapping(value = "/registershop", method = RequestMethod.POST)
     public Map<String, Object> registerShop(HttpServletRequest request) {
         HashMap<String, Object> modelMap = new HashMap<>();
         //1、接收并转化相应的参数

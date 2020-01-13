@@ -1,4 +1,5 @@
-<html class="pixel-ratio-2 retina"><head>
+<html class="pixel-ratio-2 retina">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SUI Mobile Demo</title>
@@ -16,7 +17,8 @@
 
 
 </head>
-<body><div class="page-group">
+<body>
+<div class="page-group">
     <div id="page-layout" class="page page-current">
         <header class="bar bar-nav">
             <a class="button button-link button-nav pull-left back" href="/demos/form">
@@ -33,31 +35,9 @@
                         <div class="item-content">
                             <div class="item-media"><i class="icon icon-form-name"></i></div>
                             <div class="item-inner">
-                                <div class="item-title label">Name</div>
+                                <div class="item-title label">商铺名称</div>
                                 <div class="item-input">
-                                    <input type="text" placeholder="Your name">
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-media"><i class="icon icon-form-email"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title label">E-mail</div>
-                                <div class="item-input">
-                                    <input type="email" placeholder="E-mail">
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="item-content">
-                            <div class="item-media"><i class="icon icon-form-password"></i></div>
-                            <div class="item-inner">
-                                <div class="item-title label">Password</div>
-                                <div class="item-input">
-                                    <input type="password" placeholder="Password" class="">
+                                    <input type="text" id="shop-name" placeholder="商铺名称">
                                 </div>
                             </div>
                         </div>
@@ -66,60 +46,85 @@
                         <div class="item-content">
                             <div class="item-media"><i class="icon icon-form-gender"></i></div>
                             <div class="item-inner">
-                                <div class="item-title label">Gender</div>
+                                <div class="item-title label">商铺分类</div>
                                 <div class="item-input">
-                                    <select>
-                                        <option>Male</option>
-                                        <option>Female</option>
+                                    <select id="shop-category">
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <!-- Date -->
                     <li>
                         <div class="item-content">
-                            <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                            <div class="item-media"><i class="icon icon-form-gender"></i></div>
                             <div class="item-inner">
-                                <div class="item-title label">Birth date</div>
+                                <div class="item-title label">所属区域</div>
                                 <div class="item-input">
-                                    <input type="date" placeholder="Birth day" value="2014-04-30">
+                                    <select id="area">
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <!-- Switch (Checkbox) -->
                     <li>
                         <div class="item-content">
-                            <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
                             <div class="item-inner">
-                                <div class="item-title label">Switch</div>
+                                <div class="item-title label">详细地址</div>
                                 <div class="item-input">
-                                    <label class="label-switch">
-                                        <input type="checkbox">
-                                        <div class="checkbox"></div>
-                                    </label>
+                                    <input type="text" id="shop-addr" placeholder="详细地址">
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="align-top">
+                    <li>
                         <div class="item-content">
-                            <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
                             <div class="item-inner">
-                                <div class="item-title label">Textarea</div>
+                                <div class="item-title label">联系电话</div>
                                 <div class="item-input">
-                                    <textarea></textarea>
+                                    <input type="tel" id="shop-phone" placeholder="联系电话">
                                 </div>
                             </div>
                         </div>
                     </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <i class="icon icon-form-email"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title label">缩略图</div>
+                                <div class="item-input">
+                                    <input type="file" id="shop-img" placeholder="联系电话">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <i class="icon icon-form-email"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title label">店铺简介</div>
+                                <div class="item-input">
+                                    <textarea placeholder="店铺简介" id="shop-desc"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
                 </ul>
             </div>
             <div class="content-block">
                 <div class="row">
-                    <div class="col-50"><a href="#" class="button button-big button-fill button-danger">取消</a></div>
-                    <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+                    <div class="col-50">
+                        <a href="#" class="button button-big button-fill button-danger">取消</a>
+                    </div>
+                    <div class="col-50">
+                        <a href="#" id="submit" class="button button-big button-fill button-success">提交</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,5 +136,7 @@
 <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='../resources/js/shop/shopedit.js' charset='utf-8'></script>
 
-</body></html>
+</body>
+</html>

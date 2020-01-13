@@ -15,4 +15,10 @@ public class AdminController {
         return "shop/register";
     }
 
+
+    @RequestMapping(value = "/shopedit", method = RequestMethod.GET)
+    private String shopEdit() {
+        return "shop/shopedit";
+    }
+
 }
